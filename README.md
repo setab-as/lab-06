@@ -8,4 +8,6 @@
 `N/A` 
 
 ## Verbal Collaboration
-`N/A`
+
+`name: Muhanad Sawalha
+ccid: msawalha`
