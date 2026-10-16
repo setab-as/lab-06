@@ -29,4 +29,19 @@ class WizardTest {
 
         assertEquals(5, evilWizard.mana) // mana still is 5
     }
+    // test to check behaviour when we cast a frostbite spell successfully
+    @Test
+    fun castSpell_frostbite_successful() {
+        val damageDealt = evilWizard.castSpell("Frostbite")
+        assertEquals(20, damageDealt) // spellk power of 10 * 2 = 20
+        assertEquals(25, evilWizard.mana) // mana of 30 - 5 = 25
+    }
+    // test to check behaviour when we dont have the mana to cast a frostbite spell
+    @Test
+    fun castSpell_frostbite_unsuccessful() {
+        evilWizard.mana = 4
+        val damageDealt = evilWizard.castSpell("Frostbite")
+        assertEquals(0, damageDealt) // spell fails
+        assertEquals(4, evilWizard.mana) // mana remains 4
+    }
 }
